@@ -34,6 +34,8 @@ def connexionAD():
     except ldap.LDAPError, e:
         print e
         sys.exit(1)
+    
+    return AD
 
 
 AD.unbind()
