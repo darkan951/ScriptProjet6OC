@@ -10,6 +10,7 @@ dictLDAP = {
     'base':'dc=projet6,dc=oc'
 }
 
+# a modif ==> mettre dans fichier YAML
 dictUser = {
     'objectClass': ['top', 'person', 'organizationalPerson', 'user'],
     'prenom': '',
@@ -41,6 +42,14 @@ def AjoutUtil (ObjetAD, dictUser) :
     try:
         ObjetAD.add_s(userDN, ldap.modlist.addModlist(dictUser))
     except:
+
+# definition d'une fonction de modification d'utilistateu
+
+# definition pour supprimer un util
+
+# definir fonction de verification des droits (en fonction d'un utilisateur type) avec remonter anomalie
+
+# definir un appel a vide
 
 
 # definition du main qui servira à gerer le déroulé du script        
