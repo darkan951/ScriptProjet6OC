@@ -33,12 +33,13 @@ def Connexion (dictLDAP) :
     except ldap.LDAPError as e:
         print("echec connexion :", e)
         sys.exit(1)
+    return ObjetAD
 
 
 # definition de la fonction d'ajout d'utilisateur
-def AjoutUtil () :
+def AjoutUtil (ObjetAD, dictUser) :
     try:
-
+        ObjetAD.add_s(userDN, ldap.modlist.addModlist(dictUser))
     except:
 
 
