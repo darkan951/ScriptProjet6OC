@@ -10,6 +10,20 @@ dictLDAP = {
     'base':'dc=projet6,dc=oc'
 }
 
+dictUser = {
+    'objectClass': ['top', 'person', 'organizationalPerson', 'user'],
+    'prenom': '',
+    'nomFamille': '',
+    'nomAfficher': '',
+    'sAMAccountName': '',
+    'nomComplet': '',
+    'userAccountControl': '',  # 514 will set user account to disabled, 512 is enable but can't create directly
+    'nomDeConnexion': '',
+    'mail': '',
+    'pwdUtil': '',
+    'description': ''
+}
+
 # définition de la fonction de connexion
 def Connexion (dictLDAP) :
     try:
@@ -22,7 +36,10 @@ def Connexion (dictLDAP) :
 
 
 # definition de la fonction d'ajout d'utilisateur
-# def AjoutUtil () :
+def AjoutUtil () :
+    try:
+
+    except:
 
 
 # definition du main qui servira à gerer le déroulé du script        
