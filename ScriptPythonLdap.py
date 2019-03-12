@@ -3,7 +3,7 @@ import time
 import sys
 import yaml
 
-dictLDAP = yaml.load(open('ADconnex.yaml'))
+dictLDAP = yaml.load(open('ParametreScript.yaml'))['Connexion']
 
 # définition de la fonction de connexion
 def Connexion (dictLDAP) :
