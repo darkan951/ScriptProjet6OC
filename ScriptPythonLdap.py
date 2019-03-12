@@ -45,10 +45,13 @@ def main():
         Connexion(dictLDAP)
     elif argument == "a":
         # fonction ajoututil
+        print("en cour de dev")
     elif argument == "s":
         # fonction supprutil
+        print("en cour de dev")
     elif argument == "m":
         # fonction modifutil
+        print("en cour de dev")
     else:
         print("choix incorrecte")
         # fonction aide
