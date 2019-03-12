@@ -4,10 +4,10 @@ import sys
 
 # definition du dictionnaire contenant les informations de connexion
 dictLDAP = {
-    'srvAD':'srvAD.projet6.oc',
-    'admin':'cn=Franck Hebert,ou=ServiceTechnique,ou=SocieteX,dc=projet6,dc=oc',
+    'srvAD':'ldap://AD2016.projet6.oc:389',
+    'admin':'CN=Franck Hebert,OU=ServiceTechnique,OU=SocieteX,DC=projet6,DC=oc',
     'mdp':'ZAR_&"kan',
-    'base':'dc=projet6,dc=oc'
+    'base':'DC=projet6,DC=oc'
 }
 
 # a modif ==> mettre dans fichier YAML
@@ -38,10 +38,10 @@ def Connexion (dictLDAP) :
 
 
 # definition de la fonction d'ajout d'utilisateur
-def AjoutUtil (ObjetAD, dictUser) :
-    try:
-        ObjetAD.add_s(userDN, ldap.modlist.addModlist(dictUser))
-    except:
+#def AjoutUtil (ObjetAD, dictUser) :
+#    try:
+#        ObjetAD.add_s(userDN, ldap.modlist.addModlist(dictUser))
+#    except:
 
 # definition d'une fonction de modification d'utilistateu
 
@@ -53,6 +53,7 @@ def AjoutUtil (ObjetAD, dictUser) :
 
 
 # definition du main qui servira à gerer le déroulé du script        
+
 def main():
     Connexion(dictLDAP)
 
