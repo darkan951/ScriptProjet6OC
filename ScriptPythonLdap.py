@@ -3,17 +3,11 @@ import time
 import sys
 import yaml
 
-# definition du dictionnaire qui contiendra les info de connexion du fichier YAML
-dictLDAP = {}
-
-# definition du dictionnaire qui contiendra les info de l'utilisateur du fichier YAML
-dictUser = {}
-
 # définition de la fonction de connexion
 def Connexion (dictLDAP) :
     try:
-        ObjetAD = ldap.initialize(dictLDAP.get('srvAD'))
-        connex = ObjetAD.simple_bind_s(dictLDAP.get('admin'), dictLDAP.get('mdp'))
+        ObjetAD = ldap.initialize(dictLDAP['srvAD'])
+        connex = ObjetAD.simple_bind_s(dictLDAP['admin'], dictLDAP['mdp'])
         print(connex)
     except ldap.LDAPError as e:
         print("echec connexion :", e)
@@ -48,6 +42,9 @@ def aideScript():
 # definition du main qui servira à gerer le déroulé du script        
 
 def main():
+
+    dictLDAP = yaml.load(open('ADconnex.yaml'))
+
     if len(sys.argv) < 2:
         aideScript()
         sys.exit(1)
