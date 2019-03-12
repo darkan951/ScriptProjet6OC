@@ -33,7 +33,7 @@ def Connexion (dictLDAP) :
 
 # definir fonction de verification des droits (en fonction d'un utilisateur type) avec remonter anomalie
 
-# definir un appel a vide
+# fonction d'aide appellé si le script n'a pas d'argument ou un mauvais argument
 def aideScript():
     aide = """ 
     Remplir le fichier YAML.
@@ -66,7 +66,7 @@ def main():
         # fonction modifutil
         print("en cour de dev")
     else:
-        print("choix incorrecte")
-        # fonction aide
+        print("choix incorrect")
+        aideScript()
 
 main()
