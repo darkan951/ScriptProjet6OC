@@ -3,6 +3,8 @@ import time
 import sys
 import yaml
 
+dictLDAP = yaml.load(open('ADconnex.yaml'))
+
 # définition de la fonction de connexion
 def Connexion (dictLDAP) :
     try:
@@ -43,7 +45,7 @@ def aideScript():
 
 def main():
 
-    dictLDAP = yaml.load(open('ADconnex.yaml'))
+    print(dictLDAP)
 
     if len(sys.argv) < 2:
         aideScript()
