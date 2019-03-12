@@ -1,29 +1,13 @@
 import ldap
 import time
 import sys
+import yaml
 
-# definition du dictionnaire contenant les informations de connexion
-dictLDAP = {
-    'srvAD':'ldap://AD2016.projet6.oc:389',
-    'admin':'CN=Franck Hebert,OU=ServiceTechnique,OU=SocieteX,DC=projet6,DC=oc',
-    'mdp':'ZAR_&"kan',
-    'base':'DC=projet6,DC=oc'
-}
+# definition du dictionnaire qui contiendra les info de connexion du fichier YAML
+dictLDAP = {}
 
-# a modif ==> mettre dans fichier YAML
-dictUser = {
-    'objectClass': ['top', 'person', 'organizationalPerson', 'user'],
-    'prenom': '',
-    'nomFamille': '',
-    'nomAfficher': '',
-    'sAMAccountName': '',
-    'nomComplet': '',
-    'userAccountControl': '',  # 514 will set user account to disabled, 512 is enable but can't create directly
-    'nomDeConnexion': '',
-    'mail': '',
-    'pwdUtil': '',
-    'description': ''
-}
+# definition du dictionnaire qui contiendra les info de l'utilisateur du fichier YAML
+dictUser = {}
 
 # définition de la fonction de connexion
 def Connexion (dictLDAP) :
@@ -55,6 +39,18 @@ def Connexion (dictLDAP) :
 # definition du main qui servira à gerer le déroulé du script        
 
 def main():
-    Connexion(dictLDAP)
+    argument = sys.argv[1]
+
+    if argument == "c":
+        Connexion(dictLDAP)
+    elif argument == "a":
+        # fonction ajoututil
+    elif argument == "s":
+        # fonction supprutil
+    elif argument == "m":
+        # fonction modifutil
+    else:
+        print("choix incorrecte")
+        # fonction aide
 
 main()

@@ -1,0 +1,20 @@
+# information concernant la connexion à l'AD, Attention à ne pas changer les noms des variables !!!
+Connexion:
+  srvAD: 'ldap://AD2016.projet6.oc:389'
+  admin: 'CN=Franck Hebert,OU=ServiceTechnique,OU=SocieteX,DC=projet6,DC=oc'
+  mdp: 'ZAR_&"kan'
+  base: 'DC=projet6,DC=oc'
+
+# information concernant l'ajout d'utilisateur, Attention à ne pas changer les noms des variables !!!
+UtilisateurAjout:
+  objectClass: ['top', 'person', 'organizationalPerson', 'user']
+  prenom:
+  nomFamille:
+  nomAfficher:
+  sAMAccountName':
+  nomComplet:
+  userAccountControl:
+  nomDeConnexion:
+  mail:
+  pwdUtil:
+  description:
