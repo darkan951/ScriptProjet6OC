@@ -34,11 +34,24 @@ def Connexion (dictLDAP) :
 # definir fonction de verification des droits (en fonction d'un utilisateur type) avec remonter anomalie
 
 # definir un appel a vide
-
+def aideScript():
+    aide = """ 
+    Remplir le fichier YAML.
+    liste des arguments :
+        c   appel la connexion à l'AD
+        a   appel l'ajout d'utilisateur
+        s   appel la suppression d'utilisateur
+        m   appel la modification d'utilisateur
+    """
+    print(aide)
 
 # definition du main qui servira à gerer le déroulé du script        
 
 def main():
+    if len(sys.argv) < 2:
+        aideScript()
+        sys.exit(1)
+
     argument = sys.argv[1]
 
     if argument == "c":
