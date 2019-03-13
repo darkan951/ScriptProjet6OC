@@ -26,7 +26,7 @@ def AjoutUtil (ObjetAD, dictUser) :
     except ldap.LDAPError as e:
         sys.stderr.write('Erreur insertion utilisateur ')
         sys.stderr.write('Message: ' + str(e) + '\n')
-            sys.exit(1)
+        sys.exit(1)
 
 # definition d'une fonction de modification d'utilistateu
 
