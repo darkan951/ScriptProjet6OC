@@ -23,7 +23,7 @@ def AjoutUtil (ObjetAD, dictUser) :
     try:
         ObjetAD.add_s(dictUser['user_dn'], ldap.modlist.addModlist(dictUser))
         print('Insertion du nouvel utilisateur')
-    except ldap.LDAPError, e:
+    except ldap.LDAPError as e:
         sys.stderr.write('Erreur insertion utilisateur ')
         sys.stderr.write('Message: ' + str(e) + '\n')
             sys.exit(1)
