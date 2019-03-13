@@ -4,6 +4,7 @@ import sys
 import yaml
 
 dictLDAP = yaml.load(open('ParametreScript.yaml'))['Connexion']
+dictUser = yaml.load(open('ParametreScript.yaml'))['UtilisateurAjout']
 
 # définition de la fonction de connexion
 def Connexion (dictLDAP) :
@@ -18,10 +19,14 @@ def Connexion (dictLDAP) :
 
 
 # definition de la fonction d'ajout d'utilisateur
-#def AjoutUtil (ObjetAD, dictUser) :
-#    try:
-#        ObjetAD.add_s(userDN, ldap.modlist.addModlist(dictUser))
-#    except:
+def AjoutUtil (ObjetAD, dictUser) :
+    try:
+        ObjetAD.add_s(dictUser['user_dn'], ldap.modlist.addModlist(dictUser))
+        print('Insertion du nouvel utilisateur')
+    except ldap.LDAPError, e:
+        sys.stderr.write('Erreur insertion utilisateur ')
+        sys.stderr.write('Message: ' + str(e) + '\n')
+            sys.exit(1)
 
 # definition d'une fonction de modification d'utilistateu
 
@@ -56,8 +61,9 @@ def main():
     if argument == "c":
         Connexion(dictLDAP)
     elif argument == "a":
-        # fonction ajoututil
-        print("en cour de dev")
+        connex = Connexion(dictLDAP)
+        AjoutUtil(connex, dictUser)
+        connex.unbind()
     elif argument == "s":
         # fonction supprutil
         print("en cour de dev")
