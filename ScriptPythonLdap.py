@@ -5,6 +5,7 @@ import yaml
 
 dictLDAP = yaml.load(open('ParametreScript.yaml'))['Connexion']
 dictUser = yaml.load(open('ParametreScript.yaml'))['UtilisateurAjout']
+userDN = yaml.load(open('ParametreScript.yaml'))['CheminUtil']
 
 # définition de la fonction de connexion
 def Connexion (dictLDAP) :
@@ -21,7 +22,7 @@ def Connexion (dictLDAP) :
 # definition de la fonction d'ajout d'utilisateur
 def AjoutUtil (ObjetAD, dictUser) :
     try:
-        ObjetAD.add_s(dictUser['user_dn'], ldap.modlist.addModlist(dictUser))
+        ObjetAD.add_s(userDN['user_dn'], ldap.modlist.addModlist(dictUser))
         print('Insertion du nouvel utilisateur')
     except ldap.LDAPError as e:
         sys.stderr.write('Erreur insertion utilisateur ')

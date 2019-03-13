@@ -18,4 +18,6 @@ UtilisateurAjout:
   mail: 'test1@projet6.oc'
   userPassword: 'passsword'
   description: 'test'
+
+CheminUtil:
   user_dn: 'CN=test1,OU=ServiceRH,OU=SocieteX,DC=projet6,DC=oc'
