@@ -22,7 +22,7 @@ def Connexion (dictLDAP) :
 ldif = Modlist.addModlist(dictUser)
 
 # definition de la fonction d'ajout d'utilisateur
-def AjoutUtil (ObjetAD, dictUser) :
+def AjoutUtil (ObjetAD, dictUser, ldif) :
     try:
         ObjetAD.add_s(userDN['user_dn'], ldif)
         print('Insertion du nouvel utilisateur')
@@ -65,7 +65,7 @@ def main():
         Connexion(dictLDAP)
     elif argument == "a":
         connex = Connexion(dictLDAP)
-        AjoutUtil(connex, dictUser)
+        AjoutUtil(connex, dictUser, ldif)
         connex.unbind()
     elif argument == "s":
         # fonction supprutil
