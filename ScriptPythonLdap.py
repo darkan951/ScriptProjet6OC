@@ -19,11 +19,12 @@ def Connexion (dictLDAP) :
         sys.exit(1)
     return ObjetAD
 
+ldif = Modlist.addModlist(dictUser)
 
 # definition de la fonction d'ajout d'utilisateur
-def AjoutUtil (ObjetAD, dictUser) :
+def AjoutUtil (ObjetAD, dictUser, ldif) :
     try:
-        ObjetAD.add_s(userDN['user_dn'], Modlist.addModlist(dictUser))
+        ObjetAD.add_s(userDN['user_dn'], ldif)
         print('Insertion du nouvel utilisateur')
     except ldap.LDAPError as e:
         sys.stderr.write('Erreur insertion utilisateur ')
