@@ -1,4 +1,5 @@
 import ldap
+import ldap.modlist as Modlist
 import time
 import sys
 import yaml
@@ -22,7 +23,7 @@ def Connexion (dictLDAP) :
 # definition de la fonction d'ajout d'utilisateur
 def AjoutUtil (ObjetAD, dictUser) :
     try:
-        ObjetAD.add_s(userDN['user_dn'], ldap.modlist.addModlist(dictUser))
+        ObjetAD.add_s(userDN['user_dn'], Modlist.addModlist(dictUser))
         print('Insertion du nouvel utilisateur')
     except ldap.LDAPError as e:
         sys.stderr.write('Erreur insertion utilisateur ')
