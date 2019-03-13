@@ -22,7 +22,7 @@ def Connexion (dictLDAP) :
 ldif = Modlist.addModlist(dictUser)
 
 # definition de la fonction d'ajout d'utilisateur
-def AjoutUtil (ObjetAD, dictUser, ldif) :
+def AjoutUtil (ObjetAD, dictUser) :
     try:
         ObjetAD.add_s(userDN['user_dn'], ldif)
         print('Insertion du nouvel utilisateur')
