@@ -7,15 +7,15 @@ Connexion:
 
 # information concernant l'ajout d'utilisateur, Attention à ne pas changer les noms des variables !!!
 UtilisateurAjout:
-  objectClass: ['top', 'person', 'organizationalPerson', 'user'],
-  cn: 'test1',
-  givenName: 'First_name ',
-  displayName: 'test1',
-  sAMAccountName: 'test1',
-  sn: 'middle name i guest',
-  userAccountControl: '514',  # 514 will set user account to disabled, 512 is enable but can't create directly
-  userPrincipalName: 'test1@projet6.oc',
-  mail: 'test1@projet6.oc',
-  userPassword: 'passsword',
+  objectClass: ['top', 'person', 'organizationalPerson', 'user']
+  cn: 'test1'
+  givenName: 'First_name '
+  displayName: 'test1'
+  sAMAccountName: 'test1'
+  sn: 'middle name i guest'
+  userAccountControl: '514' # 514 will set user account to disabled, 512 is enable but can't create directly
+  userPrincipalName: 'test1@projet6.oc'
+  mail: 'test1@projet6.oc'
+  userPassword: 'passsword'
   description: 'test'
   user_dn: 'CN=test1,OU=ServiceRH,OU=SocieteX,DC=projet6,DC=oc'
