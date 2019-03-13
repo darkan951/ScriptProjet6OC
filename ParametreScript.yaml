@@ -14,8 +14,8 @@ UtilisateurAjout:
   sAMAccountName: 'test1',
   sn: 'middle name i guest',
   userAccountControl: '514',  # 514 will set user account to disabled, 512 is enable but can't create directly
-  userPrincipalName: 'test1@mon.domaine.fr',
-  mail: 'test1@mon.domaine.fr',
+  userPrincipalName: 'test1@projet6.oc',
+  mail: 'test1@projet6.oc',
   userPassword: 'passsword',
   description: 'test'
-  user_dn: 'CN=test1,OU=test,DC=testad,DC=mon,DC=domaine,DC=fr'
+  user_dn: 'CN=test1,OU=ServiceRH,OU=SocieteX,DC=projet6,DC=oc'
