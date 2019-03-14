@@ -4,9 +4,9 @@ import time
 import sys
 import yaml
 
-dictLDAP = yaml.load(open('ParametreScript.yaml'))['Connexion']
-dictUser = yaml.load(open('ParametreScript.yaml'))['UtilisateurAjout']
-userDN = yaml.load(open('ParametreScript.yaml'))['CheminUtil']
+dictLDAP = yaml.load(open('Connexion.yaml'))['Connexion']
+dictUser = yaml.load(open('AddUser.yaml'))['UtilisateurAjout']
+userDN = yaml.load(open('AddUser.yaml'))['CheminUtil']
 
 # définition de la fonction de connexion
 def Connexion (dictLDAP) :
