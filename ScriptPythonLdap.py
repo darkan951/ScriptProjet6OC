@@ -12,7 +12,7 @@ userDN = yaml.load(open('AddUser.yaml'))['CheminUtil']
 def Connexion (dictLDAP) :
     try:
         ObjetAD = ldap.initialize(dictLDAP['srvAD'])
-        connex = ObjetAD.simple_bind_s(dictLDAP['admin'], dictLDAP['mdp'])
+        connex = ObjetAD.bind_s(dictLDAP['admin'], dictLDAP['mdp'])
         print(connex)
     except ldap.LDAPError as e:
         print("echec connexion :", e)
