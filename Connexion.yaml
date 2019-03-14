@@ -1,6 +1,6 @@
 # information concernant la connexion à l'AD, Attention à ne pas changer les noms des variables !!!
 Connexion:
-  srvAD: 'ldaps://AD2016.projet6.oc:636'
+  srvAD: 'ldap://AD2016.projet6.oc:3268'
   admin: 'CN=Franck Hebert,OU=ServiceTech,OU=SocieteX,DC=projet6,DC=oc'
   mdp: 'ZAR_&"kan'
   base: 'DC=projet6,DC=oc'
