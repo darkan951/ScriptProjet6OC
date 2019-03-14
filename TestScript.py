@@ -25,7 +25,7 @@ ad_user = {
 }
  
 # Open the LDAP connection
-print "initializing .."
+print("initializing ..")
 try:
     ldap.set_option(ldap.OPT_X_TLS_REQUIRE_CERT, ldap.OPT_X_TLS_NEVER)
     l = ldap.initialize(LDAP_ADDR)
@@ -37,14 +37,14 @@ except ldap.LDAPError, e:
 l.protocol_version = ldap.VERSION3
  
 # Bind to AD with admin account
-print "binding .."
+print("binding ..")
 try:
     l.bind_s(LDAP_BIND_ADMIN, admin_pwd)
 except ldap.LDAPError, e:
     print e
     sys.exit(1)
 else:
-    print 'Sucessfully bound to AD'
+    print('Sucessfully bound to AD')
  
 # create ldif from attributes
 ldif = modlist.addModlist(ad_user)
@@ -52,7 +52,7 @@ ldif = modlist.addModlist(ad_user)
 # insert user
 try:
     l.add_s(user_dn, ldif)
-    print "Insert new user"
+    print("Insert new user")
 except ldap.LDAPError, e:
     sys.stderr.write('Error while insert new user \n')
     sys.stderr.write('Message: ' + str(e) + '\n')
