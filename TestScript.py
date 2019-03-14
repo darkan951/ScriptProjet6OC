@@ -29,8 +29,8 @@ print("initializing ..")
 try:
     ldap.set_option(ldap.OPT_X_TLS_REQUIRE_CERT, ldap.OPT_X_TLS_NEVER)
     l = ldap.initialize(LDAP_ADDR)
-except ldap.LDAPError, e:
-    print e
+except ldap.LDAPError as e:
+    print(e)
     sys.exit(1)
  
 # Set protocol version to LDAPv3
@@ -40,8 +40,8 @@ l.protocol_version = ldap.VERSION3
 print("binding ..")
 try:
     l.bind_s(LDAP_BIND_ADMIN, admin_pwd)
-except ldap.LDAPError, e:
-    print e
+except ldap.LDAPError as e:
+    print(e)
     sys.exit(1)
 else:
     print('Sucessfully bound to AD')
@@ -53,7 +53,7 @@ ldif = modlist.addModlist(ad_user)
 try:
     l.add_s(user_dn, ldif)
     print("Insert new user")
-except ldap.LDAPError, e:
+except ldap.LDAPError as e:
     sys.stderr.write('Error while insert new user \n')
     sys.stderr.write('Message: ' + str(e) + '\n')
     sys.exit(1)
