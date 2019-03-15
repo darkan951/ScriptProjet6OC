@@ -12,7 +12,7 @@ userDN = yaml.load(open('AddUser.yaml'))['CheminUtil']
 def Connexion (dictLDAP) :
     try:
         ObjetAD = ldap.initialize(dictLDAP['srvAD'])
-        ObjetAD.simple_bind_s(dictLDAP['admin'], dictLDAP['mdp'])
+        ObjetAD.bind_s(dictLDAP['admin'], dictLDAP['mdp'])
         print('Connexion Réussie')
     except ldap.LDAPError as e:
         print("echec connexion :", e)
@@ -24,7 +24,8 @@ ldif = Modlist.addModlist(dictUser)
 # definition de la fonction d'ajout d'utilisateur
 def AjoutUtil (ObjetAD, dictUser, ldif) :
     try:
-        ObjetAD.simple_add_s(userDN['user_dn'], ldif)
+        print(ldif)
+        ObjetAD.add_s(userDN['user_dn'], ldif)
         print('Insertion du nouvel utilisateur')
     except ldap.LDAPError as e:
         sys.stderr.write('Erreur insertion utilisateur ')
